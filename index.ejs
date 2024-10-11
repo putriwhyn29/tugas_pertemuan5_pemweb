@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud node js - MySQL</title>
+</head>
+<body>
+    <h1>daftar user/pengguna</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>nama</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>aksi</th>
+        </tr>
+        <% users.forEach(pengguna => { %>
+        <tr>
+            <td><%= pengguna.id %></td>
+            <td><%= pengguna.nama %></td>
+            <td><%= pengguna.email %></td>
+            <td><%= pengguna.phone %></td>
+            <td>
+                <a href="/edit/<%= pengguna.id %>">edit></a> |
+                <a href="/delete/<%= pengguna.id %>">edit></a>
+            </td>
+        </tr>
+        <% }) %>
+    </table>
+
+    <h2>Tambah pengguna baru</h2>
+    <form action="/add" method="post">
+        <label for="nama">nama:</label>
+        <input type="text" id="nama" nama="nama" required><br>
+        <label for="email">email:</label>label>
+        <input type="email" nama="email" id="email"><br>
+        <label for="phone">telepon:</label>
+        <input type="text nama="phone" id="phone"><br>
+        <button type="submit">Tambah</button>
+    </form>
+</body>
+</html>
